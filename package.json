@@ -15,7 +15,8 @@
     "moment": "2.14.1",
     "mysql2": "1.0.0-rc.3",
     "scarlet-task": "1.0.0",
-    "toshihiko-memcached": "1.0.1"
+    "toshihiko-memcached": "1.0.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chinese-random-skill": "0.0.3-rdm",
@@ -35,7 +36,9 @@
     "lint": "./node_modules/.bin/jsxhint .",
     "validate": "npm ls",
     "commit-msg": "./node_modules/.bin/validate-commit-msg",
-    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -65,5 +68,6 @@
       "commit-msg": "npm run commit-msg",
       "pre-push": "npm test"
     }
-  }
+  },
+  "snyk": true
 }
